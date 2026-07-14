@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@keyframes waveOut {
+  0%   { opacity: 0.1; }
+  50%  { opacity: 1;   }
+  100% { opacity: 0.1; }
+}
+
+@keyframes letterSlideIn {
+  0%   { opacity: 0; transform: translateX(-40px); }
+  8%   { opacity: 1; transform: translateX(0); }
+  88%  { opacity: 1; transform: translateX(0); }
+  96%  { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 0; transform: translateX(-40px); }
+}
+
+@theme {
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  --color-gold: #c4a35a;
+  --color-gold-light: #d9c08a;
+  --color-charcoal: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-subtle: #9a9a9a;
+  --color-cream: #f8f5f0;
+  --color-warm-white: #fdfcfa;
+  --color-border: #e8e2d9;
+  --color-accent: #CC0000;
+  --color-accent-dark: #990000;
+
+  /* Tailwind shorthand aliases */
+  --color-red-ec: #CC0000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.article-content h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.article-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+.article-content p {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #3a3a3a;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+}
+
+.article-content em {
+  font-style: italic;
+}
+
+.article-content strong {
+  font-weight: 600;
+  color: #1a1a1a;
+}
