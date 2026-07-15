@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from: "The Bleariness <onboarding@resend.dev>",
+    from: "The Bleariness <contact@bleariness.com>",
     to: ["contact@bleariness.com"],
     replyTo: email,
     subject: `[Kontakt] ${subject} — von ${name}`,
