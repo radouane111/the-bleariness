@@ -1,53 +1,14 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 interface Props {
   articleSlug: string;
   articleTitle: string;
 }
 
-export default function ArticleActions({ articleSlug, articleTitle }: Props) {
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-  const [userVote, setUserVote] = useState<"like" | "dislike" | null>(null);
-  const [shareOpen, setShareOpen] = useState(false);
+export default function ArticleActions({ articleSlug: _articleSlug, articleTitle }: Props) {
   const [copied, setCopied] = useState(false);
-  const shareRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const stored = localStorage.getItem(`votes-${articleSlug}`);
-    if (stored) {
-      const d = JSON.parse(stored);
-      setLikes(d.likes);
-      setDislikes(d.dislikes);
-      setUserVote(d.userVote);
-    } else {
-      const initL = Math.floor(Math.random() * 80) + 20;
-      const initD = Math.floor(Math.random() * 15) + 2;
-      setLikes(initL);
-      setDislikes(initD);
-      localStorage.setItem(`votes-${articleSlug}`, JSON.stringify({ likes: initL, dislikes: initD, userVote: null }));
-    }
-  }, [articleSlug]);
-
-  const save = (l: number, d: number, v: "like" | "dislike" | null) => {
-    localStorage.setItem(`votes-${articleSlug}`, JSON.stringify({ likes: l, dislikes: d, userVote: v }));
-  };
-
-  const handleLike = () => {
-    let l = likes, d = dislikes, v: "like" | "dislike" | null;
-    if (userVote === "like") { l -= 1; v = null; }
-    else { l += 1; if (userVote === "dislike") d -= 1; v = "like"; }
-    setLikes(l); setDislikes(d); setUserVote(v); save(l, d, v);
-  };
-
-  const handleDislike = () => {
-    let l = likes, d = dislikes, v: "like" | "dislike" | null;
-    if (userVote === "dislike") { d -= 1; v = null; }
-    else { d += 1; if (userVote === "like") l -= 1; v = "dislike"; }
-    setLikes(l); setDislikes(d); setUserVote(v); save(l, d, v);
-  };
 
   const getUrl = () => typeof window !== "undefined" ? window.location.href : "";
 
@@ -62,20 +23,6 @@ export default function ArticleActions({ articleSlug, articleTitle }: Props) {
       navigator.share({ title: articleTitle, url: getUrl() });
     }
   };
-
-  /* Close share dropdown on outside click */
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (shareRef.current && !shareRef.current.contains(e.target as Node)) {
-        setShareOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  const totalVotes = likes + dislikes;
-  const likePercent = totalVotes > 0 ? Math.round((likes / totalVotes) * 100) : 50;
 
   const shareLinks = [
     {
@@ -114,57 +61,6 @@ export default function ArticleActions({ articleSlug, articleTitle }: Props) {
 
   return (
     <div className="my-10 pt-8 border-t border-border">
-
-      {/* ── LIKE / DISLIKE ── */}
-      <div className="mb-6">
-        <p className="text-xs font-sans uppercase tracking-widest text-muted mb-4">
-          War dieser Artikel hilfreich?
-        </p>
-        <div className="flex items-center gap-4 flex-wrap">
-          {/* Like */}
-          <button
-            onClick={handleLike}
-            className={`flex items-center gap-2 px-5 py-2.5 border text-sm font-sans transition-all ${
-              userVote === "like"
-                ? "bg-accent border-accent text-white"
-                : "border-border text-muted hover:border-accent hover:text-accent"
-            }`}
-          >
-            <svg className="w-4 h-4" fill={userVote === "like" ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.25M6.633 10.5H5.25a1.125 1.125 0 00-1.125 1.125v6.75C4.125 19.496 4.629 20 5.25 20h1.383c.621 0 1.125-.504 1.125-1.125V11.625c0-.621-.504-1.125-1.125-1.125z" />
-            </svg>
-            <span>{likes.toLocaleString()}</span>
-          </button>
-
-          {/* Dislike */}
-          <button
-            onClick={handleDislike}
-            className={`flex items-center gap-2 px-5 py-2.5 border text-sm font-sans transition-all ${
-              userVote === "dislike"
-                ? "bg-charcoal border-charcoal text-white"
-                : "border-border text-muted hover:border-charcoal hover:text-charcoal"
-            }`}
-          >
-            <svg className="w-4 h-4" fill={userVote === "dislike" ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.367 13.5c-.806 0-1.533.446-2.031 1.08a9.041 9.041 0 01-2.861 2.4c-.723.384-1.35.956-1.653 1.715a4.498 4.498 0 00-.322 1.672V21a.75.75 0 01-.75.75 2.25 2.25 0 01-2.25-2.25c0-1.152.26-2.243.723-3.218.266-.558-.107-1.282-.725-1.282H4.372c-1.026 0-1.945-.694-2.054-1.715A12.134 12.134 0 012.25 12c0-2.848.992-5.464 2.649-7.521.388-.482.987-.729 1.605-.729H10.52c.483 0 .964.078 1.423.23l3.114 1.04a4.501 4.501 0 001.423.23h1.383c.621 0 1.125.504 1.125 1.125v6.75c0 .621-.504 1.125-1.125 1.125H17.367z" />
-            </svg>
-            <span>{dislikes.toLocaleString()}</span>
-          </button>
-
-          {/* Rating bar */}
-          {totalVotes > 0 && (
-            <div className="flex-1 min-w-[120px] max-w-xs">
-              <div className="h-1.5 bg-border rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-accent transition-all duration-500"
-                  style={{ width: `${likePercent}%` }}
-                />
-              </div>
-              <p className="text-xs text-subtle font-sans mt-1">{likePercent}% positiv</p>
-            </div>
-          )}
-        </div>
-      </div>
 
       {/* ── SHARE ── */}
       <div className="flex items-center gap-4 flex-wrap">
