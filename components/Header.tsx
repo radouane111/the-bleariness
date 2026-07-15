@@ -52,16 +52,42 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white" dir="ltr">
 
-      {/* ── TOP BAR: Suche | Sprachen ── */}
+      {/* ── TOP BAR ── */}
       <div className="border-b border-gray-200 py-2 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
 
-          {/* Links: Suche */}
-          <div className="flex-shrink-0">
-            {/* Desktop: Suchfeld mit Text */}
+        {/* Mobile Layout */}
+        <div className="md:hidden flex items-center justify-between">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="p-2 rounded-full text-gray-400 hover:bg-gray-100 transition-colors"
+            aria-label="Suchen"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </button>
+          <div className="flex items-center gap-1">
+            {(["en", "de", "ar"] as const).map((loc, idx) => (
+              <span key={loc} className="flex items-center">
+                {idx > 0 && <span className="text-gray-300 mx-1 text-xs select-none">|</span>}
+                <button
+                  onClick={() => handleLocale(loc)}
+                  className="text-xs font-sans tracking-wider transition-colors whitespace-nowrap px-1"
+                  style={{ color: loc === locale ? "#D4A017" : "#888", fontWeight: loc === locale ? 700 : 400 }}
+                >
+                  {LANG_LABELS[loc]}
+                </button>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:grid max-w-7xl mx-auto grid-cols-3 items-center gap-4">
+          <div>
             <button
               onClick={() => setSearchOpen(true)}
-              className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-sans text-gray-400 hover:bg-gray-200 transition-colors"
+              className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-sans text-gray-400 hover:bg-gray-200 transition-colors"
               style={{ background: "#f0f0f0", minWidth: "180px" }}
               aria-label="Suchen"
             >
@@ -70,41 +96,26 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
             </button>
-            {/* Mobile: nur Icon */}
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="md:hidden p-2 rounded-full text-gray-400 hover:bg-gray-100 transition-colors"
-              aria-label="Suchen"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-            </button>
-            {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
           </div>
-
-          {/* Mitte/Rechts: Sprachen */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center justify-center gap-0">
             {(["en", "de", "ar"] as const).map((loc, idx) => (
               <span key={loc} className="flex items-center">
-                {idx > 0 && <span className="text-gray-300 mx-1 text-xs select-none">|</span>}
+                {idx > 0 && <span className="text-gray-300 mx-2 text-xs select-none">|</span>}
                 <button
                   onClick={() => handleLocale(loc)}
-                  className="text-xs font-sans tracking-wider transition-colors whitespace-nowrap px-1"
-                  style={{
-                    color: loc === locale ? "#D4A017" : "#888",
-                    fontWeight: loc === locale ? 700 : 400,
-                  }}
+                  className="text-xs font-sans tracking-widest transition-colors whitespace-nowrap"
+                  style={{ color: loc === locale ? "#D4A017" : "#888", fontWeight: loc === locale ? 700 : 400 }}
                 >
                   {LANG_LABELS[loc]}
                 </button>
               </span>
             ))}
           </div>
-
-
-
+          <div />
         </div>
+
+        {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
+
       </div>
 
       {/* ── LOGO BAR: Uhr | Großer Titel | About ── */}
