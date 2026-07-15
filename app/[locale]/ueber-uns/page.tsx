@@ -65,8 +65,7 @@ export default async function AboutPage() {
                   <Image src={member.image} alt={member.name} fill className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                 </div>
                 <h3 className="font-serif text-lg font-bold text-charcoal">{member.name}</h3>
-                <div className="text-gold text-xs font-sans uppercase tracking-widest mt-1 mb-3">{t("about.teamRole")}</div>
-                <p className="text-muted text-sm font-sans leading-relaxed">{t(`about.bio${member.id}` as any)}</p>
+                <div className="text-gold text-xs font-sans uppercase tracking-widest mt-1">{t("about.teamRole")}</div>
               </div>
             ))}
           </div>
