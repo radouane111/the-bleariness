@@ -86,16 +86,20 @@ export default function AnalogClock({ locale = "de" }: { locale?: string }) {
       </svg>
 
       {/* Date */}
-      <span style={{
-        fontFamily: "var(--font-cormorant)",
-        fontSize: "0.95rem",
-        fontWeight: 700,
-        color: "#1a1a1a",
-        letterSpacing: "0.12em",
-        textTransform: "uppercase",
-        textAlign: "center",
-        width: "100%",
-      }}>{dateStr}</span>
+      <span
+        dir={locale === "ar" ? "rtl" : "ltr"}
+        style={{
+          fontFamily: "var(--font-cormorant)",
+          fontSize: "0.95rem",
+          fontWeight: 700,
+          color: "#1a1a1a",
+          letterSpacing: "0.12em",
+          textTransform: "uppercase",
+          textAlign: "center",
+          width: "100%",
+          display: "block",
+        }}
+      >{dateStr}</span>
     </div>
   );
 }
