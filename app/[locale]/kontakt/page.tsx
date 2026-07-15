@@ -30,7 +30,7 @@ export default async function ContactPage() {
             <div>
               <h3 className="font-serif text-lg font-bold text-charcoal mb-4">{t("contact.editorialTitle")}</h3>
               <p className="text-muted text-sm font-sans leading-loose">
-                The Bleariness<br />
+                Radouane El Mhamedi<br />
                 Neuhofer Str. 1, 68219 Mannheim<br /><br />
                 <a href="mailto:contact@bleariness.com" className="text-gold hover:underline">
                   contact@bleariness.com
