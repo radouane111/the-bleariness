@@ -73,12 +73,6 @@ export default async function ArticlePage({
         />
         <ArticleActions articleSlug={article.slug} articleTitle={article.title} />
 
-        <div className="flex flex-wrap items-center gap-2 pt-2 pb-8 border-t border-border">
-          <span className="text-xs font-sans text-muted uppercase tracking-wider mr-2">{t("article.tags")}:</span>
-          {[article.category, "The Bleariness"].map((tag) => (
-            <span key={tag} className="text-xs font-sans px-3 py-1 border border-border text-muted uppercase tracking-wider">{tag}</span>
-          ))}
-        </div>
       </article>
 
       {related.length > 0 && (
