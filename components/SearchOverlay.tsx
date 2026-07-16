@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { articles, categories } from "@/lib/data";
 import { formatDate } from "@/lib/data";
@@ -12,6 +12,7 @@ interface Props {
 
 export default function SearchOverlay({ onClose }: Props) {
   const t = useTranslations();
+  const locale = useLocale();
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -123,7 +124,7 @@ export default function SearchOverlay({ onClose }: Props) {
                       {article.title}
                     </p>
                     <p className="text-xs font-sans text-gray-400">
-                      {article.author} · {formatDate(article.date)}
+                      {article.author} · {formatDate(article.date, locale)}
                     </p>
                   </div>
                 </Link>

@@ -56,7 +56,7 @@ export default async function HomePage({
                     {article.title}
                   </h3>
                   <p className="text-muted text-sm font-sans leading-snug line-clamp-2 mb-2">{article.excerpt}</p>
-                  <span className="text-subtle text-xs font-sans">{formatDate(article.date)}</span>
+                  <span className="text-subtle text-xs font-sans">{formatDate(article.date, locale)}</span>
                 </div>
               </Link>
             ))}
@@ -81,7 +81,7 @@ export default async function HomePage({
                   <div className="flex items-center gap-1 text-subtle text-xs font-sans">
                     <span>{article.readTime} {t("hero.minRead")}</span>
                     <span>·</span>
-                    <span>{formatDate(article.date)}</span>
+                    <span>{formatDate(article.date, locale)}</span>
                   </div>
                 </Link>
               ))}

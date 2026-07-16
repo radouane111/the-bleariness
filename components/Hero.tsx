@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import type { Article } from "@/lib/data";
 import { formatDate } from "@/lib/data";
 
-export default async function Hero({ article }: { article: Article }) {
+export default async function Hero({ article, locale = "de" }: { article: Article; locale?: string }) {
   const t = await getTranslations();
 
   return (
@@ -28,7 +28,7 @@ export default async function Hero({ article }: { article: Article }) {
             <div className="flex flex-wrap items-center gap-3 text-subtle text-sm mb-8 font-sans">
               <span className="text-charcoal font-medium">{article.author}</span>
               <span>·</span>
-              <span>{formatDate(article.date)}</span>
+              <span>{formatDate(article.date, locale)}</span>
               <span>·</span>
               <span>{article.readTime} {t("hero.minRead")}</span>
             </div>

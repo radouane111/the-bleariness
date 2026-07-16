@@ -32,7 +32,7 @@ export default async function ArticlePage({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const t = await getTranslations();
   const article = getArticleBySlug(slug);
   if (!article) notFound();
@@ -54,7 +54,7 @@ export default async function ArticlePage({
           <div className="flex flex-wrap items-center gap-4 text-subtle text-sm mt-6 pb-6 border-b border-border font-sans">
             <span className="text-charcoal font-medium">{article.author}</span>
             <span>·</span>
-            <span>{formatDate(article.date)}</span>
+            <span>{formatDate(article.date, locale)}</span>
             <span>·</span>
             <span>{article.readTime} {t("article.minRead")}</span>
           </div>

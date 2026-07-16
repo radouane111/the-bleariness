@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 import type { Article } from "@/lib/data";
 import { formatDate } from "@/lib/data";
 
@@ -9,6 +11,7 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article, variant = "default" }: ArticleCardProps) {
+  const locale = useLocale();
   if (variant === "horizontal") {
     return (
       <Link href={`/artikel/${article.slug}`} className="group flex gap-5 items-start">
@@ -18,7 +21,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
         <div className="flex-1 min-w-0">
           <span className="text-gold text-xs font-sans uppercase tracking-widest">{article.category}</span>
           <h3 className="font-serif text-base font-bold text-charcoal mt-1 group-hover:text-gold transition-colors leading-snug line-clamp-2">{article.title}</h3>
-          <span className="text-muted text-xs mt-1 block font-sans">{formatDate(article.date)}</span>
+          <span className="text-muted text-xs mt-1 block font-sans">{formatDate(article.date, locale)}</span>
         </div>
       </Link>
     );
@@ -36,7 +39,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
         <div className="flex items-center gap-3 text-subtle text-xs uppercase tracking-wider font-sans">
           <span>{article.author}</span>
           <span>·</span>
-          <span>{formatDate(article.date)}</span>
+          <span>{formatDate(article.date, locale)}</span>
           <span>·</span>
           <span>{article.readTime} Min.</span>
         </div>
@@ -50,7 +53,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
         <span className="text-gold text-xs font-sans uppercase tracking-widest">{article.category}</span>
         <h3 className="font-serif text-lg font-bold text-charcoal mt-1 group-hover:text-gold transition-colors leading-snug">{article.title}</h3>
         <p className="text-muted text-sm mt-2 line-clamp-2 font-sans">{article.excerpt}</p>
-        <span className="text-subtle text-xs mt-2 block font-sans">{formatDate(article.date)}</span>
+        <span className="text-subtle text-xs mt-2 block font-sans">{formatDate(article.date, locale)}</span>
       </Link>
     );
   }
@@ -66,7 +69,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
       <div className="flex items-center gap-3 text-subtle text-xs uppercase tracking-wider font-sans">
         <span>{article.author}</span>
         <span>·</span>
-        <span>{formatDate(article.date)}</span>
+        <span>{formatDate(article.date, locale)}</span>
       </div>
     </Link>
   );

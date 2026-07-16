@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import type { Article } from "@/lib/data";
 import { formatDate } from "@/lib/data";
 
@@ -11,6 +11,7 @@ const INTERVAL = 5000;
 
 export default function CoverSlider({ articles }: { articles: Article[] }) {
   const t = useTranslations();
+  const locale = useLocale();
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -86,7 +87,7 @@ export default function CoverSlider({ articles }: { articles: Article[] }) {
           <div className="flex items-center gap-2 text-white/60 text-xs font-sans uppercase tracking-wider">
             <span className="text-white font-semibold">{article.author}</span>
             <span>·</span>
-            <span>{formatDate(article.date)}</span>
+            <span>{formatDate(article.date, locale)}</span>
             <span>·</span>
             <span>{article.readTime} {t("hero.minRead")}</span>
           </div>

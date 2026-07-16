@@ -194,9 +194,14 @@ export function getEditorsPicks(locale?: string): Article[] {
   return articles.filter((a) => a.editorsPick && matchesLocale(a, locale));
 }
 
-export function formatDate(dateStr: string): string {
+const AR_MONTHS = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+
+export function formatDate(dateStr: string, locale = "de"): string {
   const date = new Date(dateStr);
-  return date.toLocaleDateString("de-DE", {
+  if (locale === "ar") {
+    return `${date.getDate()} ${AR_MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+  }
+  return date.toLocaleDateString(locale === "en" ? "en-GB" : "de-DE", {
     day: "numeric",
     month: "long",
     year: "numeric",
