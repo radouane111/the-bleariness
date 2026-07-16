@@ -44,7 +44,7 @@ export default function AnalogClock({ locale = "de" }: { locale?: string }) {
     ? formatArabicDate(time)
     : time.toLocaleDateString(
         locale === "en" ? "en-GB" : "de-DE",
-        { day: "numeric", month: "short", year: "numeric" }
+        { day: "numeric", month: "long", year: "numeric" }
       );
 
   return (
