@@ -38,7 +38,11 @@
     "minRead": "دقيقة قراءة",
     "tags": "الوسوم",
     "similarArticles": "مقالات مشابهة",
-    "notFound": "المقال غير موجود"
+    "notFound": "المقال غير موجود",
+    "share": "مشاركة المقال",
+    "copyLink": "نسخ الرابط",
+    "copied": "تم نسخ الرابط!",
+    "shareNative": "مشاركة"
   },
   "about": {
     "tag": "عن The Bleariness",

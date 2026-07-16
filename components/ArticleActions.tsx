@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface Props {
   articleSlug: string;
@@ -9,6 +10,7 @@ interface Props {
 
 export default function ArticleActions({ articleSlug: _articleSlug, articleTitle }: Props) {
   const [copied, setCopied] = useState(false);
+  const t = useTranslations("article");
 
   const getUrl = () => typeof window !== "undefined" ? window.location.href : "";
 
@@ -65,7 +67,7 @@ export default function ArticleActions({ articleSlug: _articleSlug, articleTitle
       {/* ── SHARE ── */}
       <div className="flex items-center gap-4 flex-wrap">
         <p className="text-xs font-sans uppercase tracking-widest text-muted">
-          Artikel teilen:
+          {t("share")}:
         </p>
 
         {/* Social links */}
@@ -96,14 +98,14 @@ export default function ArticleActions({ articleSlug: _articleSlug, articleTitle
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
               </svg>
-              Link kopiert!
+              {t("copied")}
             </>
           ) : (
             <>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
               </svg>
-              Link kopieren
+              {t("copyLink")}
             </>
           )}
         </button>
@@ -117,7 +119,7 @@ export default function ArticleActions({ articleSlug: _articleSlug, articleTitle
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
             </svg>
-            Teilen
+            {t("shareNative")}
           </button>
         )}
       </div>

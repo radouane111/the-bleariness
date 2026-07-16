@@ -38,7 +38,11 @@
     "minRead": "Min. Lesen",
     "tags": "Tags",
     "similarArticles": "Ähnliche Artikel",
-    "notFound": "Artikel nicht gefunden"
+    "notFound": "Artikel nicht gefunden",
+    "share": "Artikel teilen",
+    "copyLink": "Link kopieren",
+    "copied": "Link kopiert!",
+    "shareNative": "Teilen"
   },
   "about": {
     "tag": "Über The Bleariness",
