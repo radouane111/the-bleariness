@@ -64,27 +64,27 @@ export default function CoverSlider({ articles }: { articles: Article[] }) {
 
       {/* Content */}
       <div
-        className="relative z-10 h-full flex flex-col justify-end pb-16 px-8 md:px-16 max-w-3xl transition-opacity duration-250"
+        className="relative z-10 h-full flex flex-col justify-end pb-8 md:pb-16 px-5 md:px-16 max-w-3xl transition-opacity duration-250"
         style={{ opacity: visible ? 1 : 0 }}
       >
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-2 md:mb-3">
           <span className="block w-6 h-px bg-red-500" />
           <span className="text-red-400 text-xs font-sans font-bold uppercase tracking-widest">
             {t(`categories.${article.categorySlug}`)}
           </span>
         </div>
 
-        <h1 className="font-serif text-white font-bold leading-tight mb-4"
-          style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
+        <h1 className="font-serif text-white font-bold leading-tight mb-2 md:mb-4"
+          style={{ fontSize: "clamp(1.4rem, 4vw, 3rem)" }}>
           {article.title}
         </h1>
 
-        <p className="text-white/70 text-base font-sans leading-relaxed mb-5 max-w-xl line-clamp-2">
+        <p className="hidden sm:block text-white/70 text-base font-sans leading-relaxed mb-4 max-w-xl line-clamp-2">
           {article.subtitle}
         </p>
 
-        <div className="flex flex-wrap items-center gap-5">
-          <div className="flex items-center gap-2 text-white/60 text-xs font-sans uppercase tracking-wider">
+        <div className="flex flex-wrap items-center gap-3 md:gap-5">
+          <div className="hidden sm:flex items-center gap-2 text-white/60 text-xs font-sans uppercase tracking-wider">
             <span className="text-white font-semibold">{article.author}</span>
             <span>·</span>
             <span>{formatDate(article.date, locale)}</span>
@@ -93,7 +93,7 @@ export default function CoverSlider({ articles }: { articles: Article[] }) {
           </div>
           <Link
             href={`/artikel/${article.slug}`}
-            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-xs font-sans uppercase tracking-widest px-5 py-2.5 transition-colors"
+            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-xs font-sans uppercase tracking-widest px-4 py-2 md:px-5 md:py-2.5 transition-colors"
           >
             {t("hero.readArticle")}
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

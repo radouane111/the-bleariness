@@ -118,90 +118,66 @@ export default function Header() {
 
       </div>
 
-      {/* ── LOGO BAR: Uhr | Großer Titel | About ── */}
-      <div className="px-6 py-5" style={{ borderBottom: "2px solid #0d0d0d" }}>
-        <div className="max-w-7xl mx-auto grid grid-cols-3 items-center gap-4">
+      {/* ── LOGO BAR ── */}
+      <div className="px-4 md:px-6 py-3 md:py-5" style={{ borderBottom: "2px solid #0d0d0d" }}>
 
-          {/* Links: .ear Logo */}
+        {/* Mobile: nur Titel zentriert */}
+        <div className="md:hidden flex justify-center">
+          <Link href="/" className="inline-block text-center">
+            <div style={{ lineHeight: 1 }}>
+              <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.1rem", fontWeight: 400, fontStyle: "italic", color: "#0d0d0d", letterSpacing: "0.04em", marginBottom: "-0.1em" }}>the</div>
+              <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.85rem", fontWeight: 900, letterSpacing: "0.01em", lineHeight: 0.9 }}>
+                {"Bleariness".split("").map((char, i) => {
+                  const isGold = i >= 2 && i <= 4;
+                  return (
+                    <span key={i} style={{ display: "inline-block", color: isGold ? "#D4A017" : "#0d0d0d", animation: `letterSlideIn 7s ease infinite`, animationDelay: `${i * 0.07}s`, opacity: 0 }}>
+                      {char}
+                    </span>
+                  );
+                })}
+              </div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5em", marginTop: "0.3em" }}>
+                <span style={{ display: "block", height: "1px", width: "1.5em", background: "#0d0d0d" }} />
+                <span style={{ fontFamily: "var(--font-playfair)", fontSize: "0.5rem", fontWeight: 400, letterSpacing: "0.25em", color: "#0d0d0d", textTransform: "uppercase" }}>Magazine</span>
+                <span style={{ display: "block", height: "1px", width: "1.5em", background: "#0d0d0d" }} />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Desktop: 3-Spalten */}
+        <div className="hidden md:grid max-w-7xl mx-auto grid-cols-3 items-center gap-4">
           <div className="flex justify-start">
             <EarLogo />
           </div>
-
-          {/* Mitte: Titel im Bild-Stil */}
           <div className="text-center">
             <Link href="/" className="group inline-block">
               <div style={{ lineHeight: 1 }}>
-                {/* "the" klein, kursiv */}
-                <div style={{
-                  fontFamily: "var(--font-playfair)",
-                  fontSize: "clamp(2rem, 5.5vw, 4.2rem)",
-                  fontWeight: 400,
-                  fontStyle: "italic",
-                  color: "#0d0d0d",
-                  letterSpacing: "0.04em",
-                  marginBottom: "-0.25em",
-                }}>the</div>
-
-                {/* "bleariness" groß, fett — Buchstaben einzeln animiert */}
-                <div style={{
-                  fontFamily: "var(--font-playfair)",
-                  fontSize: "clamp(2rem, 5.5vw, 4.2rem)",
-                  fontWeight: 900,
-                  letterSpacing: "0.01em",
-                  lineHeight: 0.9,
-                }}>
+                <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 5.5vw, 4.2rem)", fontWeight: 400, fontStyle: "italic", color: "#0d0d0d", letterSpacing: "0.04em", marginBottom: "-0.25em" }}>the</div>
+                <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 5.5vw, 4.2rem)", fontWeight: 900, letterSpacing: "0.01em", lineHeight: 0.9 }}>
                   {"Bleariness".split("").map((char, i) => {
                     const isGold = i >= 2 && i <= 4;
                     const isB = i === 0;
                     return (
-                      <span
-                        key={i}
-                        style={{
-                          display: "inline-block",
-                          color: isGold ? "#D4A017" : "#0d0d0d",
-                          animation: `letterSlideIn 7s ease infinite`,
-                          animationDelay: `${i * 0.07}s`,
-                          opacity: 0,
-                          fontSize: isB ? "clamp(2.8rem, 7vw, 5.8rem)" : undefined,
-                          lineHeight: 1,
-                          verticalAlign: "bottom",
-                        }}
-                      >
+                      <span key={i} style={{ display: "inline-block", color: isGold ? "#D4A017" : "#0d0d0d", animation: `letterSlideIn 7s ease infinite`, animationDelay: `${i * 0.07}s`, opacity: 0, fontSize: isB ? "clamp(2.8rem, 7vw, 5.8rem)" : undefined, lineHeight: 1, verticalAlign: "bottom" }}>
                         {char}
                       </span>
                     );
                   })}
                 </div>
-
-                {/* "— MAGAZINE —" */}
-                <div style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "0.5em",
-                  marginTop: "0.35em",
-                }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5em", marginTop: "0.35em" }}>
                   <span style={{ display: "block", height: "1px", width: "2em", background: "#0d0d0d" }} />
-                  <span style={{
-                    fontFamily: "var(--font-playfair)",
-                    fontSize: "clamp(0.5rem, 1vw, 0.65rem)",
-                    fontWeight: 400,
-                    letterSpacing: "0.25em",
-                    color: "#0d0d0d",
-                    textTransform: "uppercase",
-                  }}>Magazine</span>
+                  <span style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(0.5rem, 1vw, 0.65rem)", fontWeight: 400, letterSpacing: "0.25em", color: "#0d0d0d", textTransform: "uppercase" }}>Magazine</span>
                   <span style={{ display: "block", height: "1px", width: "2em", background: "#0d0d0d" }} />
                 </div>
               </div>
             </Link>
           </div>
-
-          {/* Rechts: Analoge Uhr */}
           <div className="flex justify-end items-center pr-2">
             <AnalogClock locale={locale} />
           </div>
-
         </div>
+
       </div>
 
       {/* ── SECTION NAV ── */}

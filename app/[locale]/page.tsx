@@ -30,11 +30,11 @@ export default async function HomePage({
       </div>
 
       {/* ── MAIN EDITORIAL GRID ─────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto pt-6 pb-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 pt-6 pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-border">
 
           {/* LEFT — Latest Articles (text-heavy) */}
-          <div className="lg:col-span-2 divide-y divide-border border-r border-border">
+          <div className="lg:col-span-2 divide-y divide-border lg:border-r border-border">
             <div className="px-6 py-1 bg-charcoal">
               <span className="text-white text-xs font-sans uppercase tracking-widest font-semibold">
                 {t("home.latestArticles")}
