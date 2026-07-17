@@ -62,28 +62,22 @@ export const categories: Category[] = [
 export const articles: Article[] = [
   {
     id: "10",
-    title: "Das Bewusstsein: Allein im Strom der Masse",
-    subtitle: "In einer hypervernetzten Welt fühlen sich immer mehr Menschen unsichtbar. Ist das ein persönliches Versagen – oder ein kollektives Erwachen?",
+    title: "Demnächst auf The Bleariness",
+    subtitle: "Die ersten Artikel sind auf dem Weg. Wir arbeiten an Geschichten, die zählen.",
     slug: "bewusstsein-allein-in-der-masse",
     category: "Society",
     categorySlug: "society",
     author: "Radouane El Mhamedi",
     date: "2026-06-28",
-    readTime: 7,
+    readTime: 3,
     image: "/images/consciousness.png",
-    excerpt: "Millionen Menschen. Millionen Stimmen. Und trotzdem – das leise, hartnäckige Gefühl, nicht gehört zu werden. Was verrät uns das über unser Bewusstsein?",
-    content: `<h2>Das Paradox der Menge</h2>
-<p>Stell dir vor: Du stehst mitten in einer Menschenmenge. Tausende Körper in Bewegung. Tausende Stimmen, die sich zu einem einzigen Rauschen vermischen. Und trotzdem – du stehst still. Nicht weil du nicht kannst. Sondern weil du <em>siehst</em>.</p>
-<p>Dieses Bild ist kein literarisches Konstrukt. Es ist die innere Realität jener Menschen, die begonnen haben, die Welt mit wachen Augen zu betrachten. Bewusstsein ist keine Fähigkeit, die man hat oder nicht hat. Es ist ein Zustand, der sich langsam, manchmal schmerzhaft, in uns entfaltet.</p>
-<h2>Was bedeutet es, bewusst zu sein?</h2>
-<p>Das Wort „Bewusstsein" ist schwerer zu fassen, als es scheint. In der Philosophie bezeichnet es das Gewahrsein des eigenen Denkens – das „Ich weiß, dass ich weiß." In der Psychologie meint es die Fähigkeit, eigene Muster zu erkennen, sich von Automatismen zu lösen.</p>
-<p>Aber im gesellschaftlichen Sinne bedeutet Bewusstsein etwas noch Grundlegenderes: Es bedeutet, die eigene Position in der Welt zu kennen. Zu verstehen, wie die Strukturen, in denen wir leben, uns formen – und wie wir sie formen könnten.</p>
-<h2>Die Einsamkeit des Wachen</h2>
-<p>Wer einmal begonnen hat, bewusst zu leben, stellt oft fest: Es macht einsam. Nicht weil man sich von anderen entfernt. Sondern weil man Dinge sieht, die andere (noch) nicht sehen. Ungerechtigkeiten. Widersprüche. Die stille Gewalt des Normalen.</p>
-<p>Diese Einsamkeit ist kein Zeichen des Scheiterns. Sie ist ein Zeichen der Reife. Der Mensch auf dem Bild – mitten in der Menge, still, schauend – ist kein Außenseiter. Er ist ein Zeuge. Und Zeugen haben in jeder Gesellschaft eine unverzichtbare Funktion.</p>
-<h2>Bewusstsein als kollektive Aufgabe</h2>
-<p>Am Ende ist individuelles Bewusstsein nur der Anfang. Eine Gesellschaft, die sich selbst versteht – die ihre Geschichte kennt, ihre Widersprüche aushält und ihre Zukunft gestalten will – braucht nicht eine Handvoll Wacher. Sie braucht eine Kultur des Bewusstseins.</p>
-<p>Das ist kein utopischer Wunsch. Es ist eine praktische Notwendigkeit. Denn eine Menge, die nicht denkt, ist kein Kollektiv. Sie ist eine Masse. Und Massen werden geführt – nicht von Ideen, sondern von Ängsten.</p>`,
+    excerpt: "Spannende Geschichten aus Gesellschaft, Kultur, Wirtschaft und Politik. Unsere ersten Artikel erscheinen bald.",
+    content: `<h2>Bald verfügbar</h2>
+<p>Wir befinden uns noch im Aufbau. Die ersten Artikel von The Bleariness sind in Arbeit und erscheinen in Kürze.</p>
+<p>Wir glauben, dass guter Journalismus Zeit braucht. Deshalb nehmen wir uns diese Zeit – für Geschichten, die wirklich etwas zu sagen haben.</p>
+<h2>Was Sie erwartet</h2>
+<p>Tiefgründige Reportagen. Klare Analysen. Geschichten aus Gesellschaft, Kultur, Wirtschaft und Politik – unabhängig, ohne kommerziellen Druck.</p>
+<p>Abonnieren Sie unseren Newsletter, um als Erste informiert zu werden, wenn neue Artikel erscheinen.</p>`,
     featured: false,
     editorsPick: true,
     locale: "de",
@@ -91,28 +85,22 @@ export const articles: Article[] = [
   },
   {
     id: "11",
-    title: "Consciousness: Standing Still in a Moving Crowd",
-    subtitle: "In a world louder than ever, the act of stopping to think has become radical. A reflection on awareness in the age of noise.",
+    title: "Coming Soon to The Bleariness",
+    subtitle: "The first articles are on their way. We are working on stories that matter.",
     slug: "consciousness-alone-in-the-crowd",
     category: "Society",
     categorySlug: "society",
     author: "Radouane El Mhamedi",
     date: "2026-06-28",
-    readTime: 7,
+    readTime: 3,
     image: "/images/consciousness.png",
-    excerpt: "Millions of people. Millions of voices. And yet — a quiet, persistent feeling of not being heard. What does this tell us about consciousness?",
-    content: `<h2>The Paradox of the Crowd</h2>
-<p>Imagine standing in the middle of a crowd. Thousands of bodies in motion. Thousands of voices merging into a single roar. And yet — you are still. Not because you cannot move. But because you <em>see</em>.</p>
-<p>This image is not a literary device. It is the inner reality of those who have begun to look at the world with open eyes. Consciousness is not a capacity you either have or don't. It is a state that unfolds within us — slowly, sometimes painfully.</p>
-<h2>What Does It Mean to Be Conscious?</h2>
-<p>The word "consciousness" is harder to grasp than it appears. In philosophy, it describes the awareness of one's own thinking — the "I know that I know." In psychology, it refers to the ability to recognise one's own patterns, to step back from automatism.</p>
-<p>But in a social sense, consciousness means something more fundamental: knowing your position in the world. Understanding how the structures we inhabit shape us — and how we might shape them in return.</p>
-<h2>The Solitude of the Awake</h2>
-<p>Those who begin to live consciously often discover: it is lonely. Not because they have distanced themselves from others. But because they see things others do not yet see. Injustices. Contradictions. The quiet violence of what is considered normal.</p>
-<p>This solitude is not a sign of failure. It is a sign of maturity. The person in the image — still, watching, surrounded by movement — is not an outsider. They are a witness. And witnesses have an indispensable function in every society.</p>
-<h2>Consciousness as a Collective Task</h2>
-<p>In the end, individual consciousness is only the beginning. A society that understands itself — that knows its history, bears its contradictions, and wants to shape its future — does not need a handful of the awakened. It needs a culture of consciousness.</p>
-<p>This is not a utopian wish. It is a practical necessity. Because a crowd that does not think is not a collective. It is a mass. And masses are led — not by ideas, but by fears.</p>`,
+    excerpt: "Compelling stories from society, culture, business and politics. Our first articles are coming soon.",
+    content: `<h2>Coming Soon</h2>
+<p>We are still getting started. The first articles from The Bleariness are in the works and will be published shortly.</p>
+<p>We believe that good journalism takes time. So we are taking that time — for stories that truly have something to say.</p>
+<h2>What to Expect</h2>
+<p>In-depth reporting. Clear analysis. Stories from society, culture, business and politics — independent, free from commercial pressure.</p>
+<p>Subscribe to our newsletter to be the first to know when new articles go live.</p>`,
     featured: false,
     editorsPick: true,
     locale: "en",
@@ -120,28 +108,22 @@ export const articles: Article[] = [
   },
   {
     id: "12",
-    title: "الوعي: وحيداً في قلب الزحام",
-    subtitle: "في عالم يعجّ بالأصوات، أصبح التوقفُ للتفكير فعلاً جذرياً. تأمل في مفهوم الوعي في زمن الضجيج.",
+    title: "قريباً على The Bleariness",
+    subtitle: "المقالات الأولى في طريقها. نعمل على قصص تستحق أن تُروى.",
     slug: "al-waiy-wahidan-fi-alzaham",
     category: "Society",
     categorySlug: "society",
     author: "Radouane El Mhamedi",
     date: "2026-06-28",
-    readTime: 7,
+    readTime: 3,
     image: "/images/consciousness.png",
-    excerpt: "ملايين البشر. ملايين الأصوات. ومع ذلك — شعورٌ هادئ وعنيد بأنك لم تُسمع. ماذا يخبرنا هذا عن الوعي؟",
-    content: `<h2>مفارقة الحشد</h2>
-<p>تخيّل أنك تقف في وسط حشد من البشر. آلاف الأجساد في حركة. آلاف الأصوات تذوب في ضجيج واحد. ومع ذلك — أنت ثابت. ليس لأنك لا تستطيع أن تتحرك. بل لأنك <em>ترى</em>.</p>
-<p>هذه الصورة ليست بناءً أدبياً. إنها الواقع الداخلي لأولئك الذين بدأوا ينظرون إلى العالم بعيون مفتوحة. الوعي ليس قدرةً تمتلكها أو لا تمتلكها. إنه حالةٌ تتكشّف فينا ببطء، وأحياناً بألم.</p>
-<h2>ماذا يعني أن تكون واعياً؟</h2>
-<p>كلمة "الوعي" أصعب في استيعابها مما تبدو. في الفلسفة، تشير إلى الإدراك الذاتي للتفكير — "أنا أعرف أنني أعرف." وفي علم النفس، تعني القدرة على التعرف على الأنماط الذاتية، والتحرر من السلوك التلقائي.</p>
-<p>أما في المعنى الاجتماعي، فالوعي يعني شيئاً أكثر جوهرية: معرفة موقعك في العالم. فهم كيف تشكّلنا الأنظمة التي نعيش فيها — وكيف يمكننا نحن أن نشكّلها.</p>
-<h2>وحدة اليقظ</h2>
-<p>كثيراً ما يكتشف من يبدأ في العيش بوعي أن ذلك مُوحِش. ليس لأنه ابتعد عن الآخرين. بل لأنه يرى أشياء لا يراها الآخرون بعد. ظلمٌ. تناقضات. عنفٌ صامت فيما يُعدّ طبيعياً.</p>
-<p>هذه الوحدة ليست دليل فشل. إنها دليل نضج. الشخص في الصورة — ثابت، يراقب، وسط زحام متحرك — ليس غريباً. إنه شاهد. والشهودُ وظيفتهم لا غنى عنها في كل مجتمع.</p>
-<h2>الوعي مهمة جماعية</h2>
-<p>في النهاية، الوعي الفردي مجرد بداية. المجتمع الذي يفهم نفسه — الذي يعرف تاريخه، ويتحمل تناقضاته، ويريد صياغة مستقبله — لا يحتاج إلى حفنة من اليقظين. يحتاج إلى ثقافة وعي.</p>
-<p>هذا ليس حلماً طوبياوياً. إنه ضرورة عملية. لأن الحشد الذي لا يفكر ليس جماعةً. إنه كتلة. والكتل تُقاد — ليس بالأفكار، بل بالمخاوف.</p>`,
+    excerpt: "قصص من المجتمع والثقافة والأعمال والسياسة. مقالاتنا الأولى ستصدر قريباً.",
+    content: `<h2>قريباً</h2>
+<p>ما زلنا في طور البناء. المقالات الأولى لـ The Bleariness قيد الإعداد وستُنشر في وقت قريب.</p>
+<p>نؤمن أن الصحافة الجيدة تحتاج إلى وقت. لذلك نأخذ هذا الوقت — لقصص تملك ما تقوله حقاً.</p>
+<h2>ما الذي ينتظرك</h2>
+<p>تقارير معمّقة. تحليلات واضحة. قصص من المجتمع والثقافة والأعمال والسياسة — مستقلة وبعيدة عن أي ضغط تجاري.</p>
+<p>اشترك في نشرتنا البريدية لتكون أول من يعلم عند نشر مقالات جديدة.</p>`,
     featured: false,
     editorsPick: false,
     locale: "ar",
