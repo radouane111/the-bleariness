@@ -42,7 +42,15 @@
     "share": "Artikel teilen",
     "copyLink": "Link kopieren",
     "copied": "Link kopiert!",
-    "shareNative": "Teilen"
+    "shareNative": "Teilen",
+    "helpful": "War dieser Artikel hilfreich?",
+    "positive": "positiv",
+    "comments": "Kommentare",
+    "commentName": "Dein Name",
+    "commentText": "Dein Kommentar...",
+    "commentSubmit": "Kommentar senden",
+    "commentSuccess": "Kommentar wurde veröffentlicht!",
+    "noComments": "Noch keine Kommentare. Sei der Erste!"
   },
   "about": {
     "tag": "Über The Bleariness",

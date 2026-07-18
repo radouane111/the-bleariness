@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import ArticleCard from "@/components/ArticleCard";
 import PullQuote from "@/components/PullQuote";
 import ArticleActions from "@/components/ArticleActions";
+import ArticleInteractions from "@/components/ArticleInteractions";
 import ArticleTranslationSetter from "@/components/ArticleTranslationSetter";
 
 export function generateStaticParams() {
@@ -72,7 +73,7 @@ export default async function ArticlePage({
           attribution={article.author}
         />
         <ArticleActions articleSlug={article.slug} articleTitle={article.title} />
-
+        <ArticleInteractions articleSlug={article.slug} />
       </article>
 
       {related.length > 0 && (

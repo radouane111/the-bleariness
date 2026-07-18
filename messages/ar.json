@@ -42,7 +42,15 @@
     "share": "مشاركة المقال",
     "copyLink": "نسخ الرابط",
     "copied": "تم نسخ الرابط!",
-    "shareNative": "مشاركة"
+    "shareNative": "مشاركة",
+    "helpful": "هل كان هذا المقال مفيداً؟",
+    "positive": "إيجابي",
+    "comments": "التعليقات",
+    "commentName": "اسمك",
+    "commentText": "تعليقك...",
+    "commentSubmit": "إرسال التعليق",
+    "commentSuccess": "تم نشر تعليقك!",
+    "noComments": "لا توجد تعليقات بعد. كن أول من يعلّق!"
   },
   "about": {
     "tag": "عن The Bleariness",
