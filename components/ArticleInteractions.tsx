@@ -37,11 +37,10 @@ export default function ArticleInteractions({ articleSlug }: Props) {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    if (!supabase) return;
     const visitorId = getVisitorId();
 
     async function load() {
-      const { data: votes } = await supabase!
+      const { data: votes } = await supabase
         .from("votes")
         .select("vote")
         .eq("article_slug", articleSlug);
@@ -51,7 +50,7 @@ export default function ArticleInteractions({ articleSlug }: Props) {
         setDislikes(votes.filter((v) => v.vote === "dislike").length);
       }
 
-      const { data: myVote } = await supabase!
+      const { data: myVote } = await supabase
         .from("votes")
         .select("vote")
         .eq("article_slug", articleSlug)
@@ -60,7 +59,7 @@ export default function ArticleInteractions({ articleSlug }: Props) {
 
       if (myVote) setUserVote(myVote.vote as "like" | "dislike");
 
-      const { data: cmts } = await supabase!
+      const { data: cmts } = await supabase
         .from("comments")
         .select("*")
         .eq("article_slug", articleSlug)
@@ -73,7 +72,6 @@ export default function ArticleInteractions({ articleSlug }: Props) {
   }, [articleSlug]);
 
   const handleVote = async (vote: "like" | "dislike") => {
-    if (!supabase) return;
     const visitorId = getVisitorId();
 
     if (userVote === vote) {
@@ -100,7 +98,7 @@ export default function ArticleInteractions({ articleSlug }: Props) {
 
   const handleComment = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!supabase || !name.trim() || !text.trim()) return;
+    if (!name.trim() || !text.trim()) return;
     setSubmitting(true);
 
     const { data } = await supabase
