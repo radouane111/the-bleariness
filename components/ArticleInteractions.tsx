@@ -35,6 +35,7 @@ export default function ArticleInteractions({ articleSlug }: Props) {
   const [text, setText] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [commentError, setCommentError] = useState("");
 
   useEffect(() => {
     const visitorId = getVisitorId();
@@ -101,13 +102,16 @@ export default function ArticleInteractions({ articleSlug }: Props) {
     if (!name.trim() || !text.trim()) return;
     setSubmitting(true);
 
-    const { data } = await supabase
+    setCommentError("");
+    const { data, error } = await supabase
       .from("comments")
       .insert({ article_slug: articleSlug, author_name: name.trim(), content: text.trim() })
       .select()
       .single();
 
-    if (data) {
+    if (error) {
+      setCommentError(error.message);
+    } else if (data) {
       setComments((prev) => [data, ...prev]);
       setName("");
       setText("");
@@ -200,6 +204,7 @@ export default function ArticleInteractions({ articleSlug }: Props) {
             {submitting ? "..." : t("article.commentSubmit")}
           </button>
           {submitted && <p className="text-gold text-sm font-sans">{t("article.commentSuccess")}</p>}
+          {commentError && <p className="text-red-500 text-sm font-sans">{commentError}</p>}
         </form>
 
         {/* Kommentarliste */}
