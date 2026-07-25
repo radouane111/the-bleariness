@@ -67,8 +67,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: { default: "The Bleariness", template: "%s | The Bleariness" },
-  description: "The Bleariness — A magazine for stories that matter.",
+  title: { default: "Bleariness", template: "%s | Bleariness" },
+  description: "Bleariness — A magazine for stories that matter.",
 };
 
 export default async function LocaleLayout({

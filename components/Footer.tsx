@@ -12,7 +12,7 @@ export default async function Footer() {
         {/* Logo + Social */}
         <div className="mb-8">
           <Link href="/" className="font-serif text-3xl font-bold tracking-[0.2em] uppercase text-white">
-            The Bleariness
+            Bleariness
           </Link>
           <div className="flex gap-5 mt-4">
             <a href="https://www.instagram.com/thebleariness?igsh=YW13dWZyeHBkOTk3&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold text-xs font-sans uppercase tracking-widest transition-colors">
@@ -44,7 +44,7 @@ export default async function Footer() {
         {/* Linie + Copyright */}
         <div className="border-t border-white/10 pt-3 pb-3">
           <span className="text-xs text-gray-600 font-sans">
-            © {new Date().getFullYear()} The Bleariness. {t("footer.copyright")}
+            © {new Date().getFullYear()} Bleariness. {t("footer.copyright")}
           </span>
         </div>
 
