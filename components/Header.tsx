@@ -125,7 +125,6 @@ export default function Header() {
         <div className="md:hidden flex justify-center">
           <Link href="/" className="inline-block text-center">
             <div style={{ lineHeight: 1 }}>
-              <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.1rem", fontWeight: 400, fontStyle: "italic", color: "#0d0d0d", letterSpacing: "0.04em", marginBottom: "-0.1em" }}>the</div>
               <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.85rem", fontWeight: 900, letterSpacing: "0.01em", lineHeight: 0.9 }}>
                 {"Bleariness".split("").map((char, i) => {
                   const isGold = i >= 2 && i <= 4;
@@ -153,7 +152,6 @@ export default function Header() {
           <div className="text-center">
             <Link href="/" className="group inline-block">
               <div style={{ lineHeight: 1 }}>
-                <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 5.5vw, 4.2rem)", fontWeight: 400, fontStyle: "italic", color: "#0d0d0d", letterSpacing: "0.04em", marginBottom: "-0.25em" }}>the</div>
                 <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 5.5vw, 4.2rem)", fontWeight: 900, letterSpacing: "0.01em", lineHeight: 0.9 }}>
                   {"Bleariness".split("").map((char, i) => {
                     const isGold = i >= 2 && i <= 4;
