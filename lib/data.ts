@@ -29,7 +29,6 @@ export interface TeamMember {
   name: string;
   role: string;
   bio: string;
-  image: string;
 }
 
 export const categories: Category[] = [
@@ -108,21 +107,24 @@ export const team: TeamMember[] = [
     name: "Radouane El Mhamedi",
     role: "Schriftsteller",
     bio: "Radouane El Mhamedi ist Gründer und Chefredakteur von Bleariness. Mit seinem Hintergrund im investigativen Journalismus und digitalen Medien prägt er die redaktionelle Vision des Magazins.",
-    image: "https://picsum.photos/seed/radouane/400/400",
   },
   {
     id: "2",
     name: "Anass El Mhamedi",
     role: "Schriftsteller",
     bio: "Anass El Mhamedi schreibt über Gesellschaft, Kunst und Gegenwartskultur. Seine Texte verbinden analytische Tiefe mit einer klaren, zugänglichen Sprache.",
-    image: "https://picsum.photos/seed/anass/400/400",
   },
   {
     id: "4",
     name: "El Mehdi Naor",
     role: "Schriftsteller",
     bio: "El Mehdi Naor ist Autor und Geschichtenerzähler. Seine Beiträge beleuchten Politik, Reisen und das menschliche Leben mit einer einzigartigen Perspektive.",
-    image: "https://picsum.photos/seed/elmehdi/400/400",
+  },
+  {
+    id: "5",
+    name: "Mohssine El Azizi",
+    role: "Schriftsteller",
+    bio: "",
   },
 ];
 

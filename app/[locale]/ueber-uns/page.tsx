@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { team } from "@/lib/data";
 
@@ -58,12 +57,9 @@ export default async function AboutPage() {
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-charcoal whitespace-nowrap">{t("about.teamTitle")}</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member) => (
-              <div key={member.id} className="group">
-                <div className="relative aspect-square overflow-hidden bg-cream mb-5">
-                  <Image src={member.image} alt={member.name} fill className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
-                </div>
+              <div key={member.id} className="border-t-2 border-gold pt-5">
                 <h3 className="font-serif text-lg font-bold text-charcoal">{member.name}</h3>
                 <div className="text-gold text-xs font-sans uppercase tracking-widest mt-1">{t("about.teamRole")}</div>
               </div>
