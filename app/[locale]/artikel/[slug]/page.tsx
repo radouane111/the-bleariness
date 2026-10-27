@@ -64,8 +64,8 @@ export default async function ArticlePage({
       </article>
       </div>
 
-      <div className="relative w-full bg-cream mb-10" style={{ height: "55vh", minHeight: "320px" }}>
-        <Image src={article.image} alt={article.title} fill priority className="object-cover" sizes="100vw" />
+      <div className="max-w-7xl mx-auto px-6 mb-10">
+        <Image src={article.image} alt={article.title} width={1536} height={1024} priority className="block w-full h-auto max-w-5xl mx-auto rtl:mr-0 bg-cream" sizes="(max-width: 1024px) 100vw, 1024px" />
       </div>
 
       <div className="max-w-7xl mx-auto">
