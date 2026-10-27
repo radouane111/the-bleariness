@@ -51,7 +51,7 @@ export default async function ArticlePage({
             {t(`categories.${article.categorySlug}`)}
           </Link>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal mt-3 leading-tight">{article.title}</h1>
-          <p className="text-muted text-lg md:text-xl mt-4 font-sans leading-relaxed">{article.subtitle}</p>
+          {article.subtitle && <p className="text-muted text-lg md:text-xl mt-4 font-sans leading-relaxed">{article.subtitle}</p>}
           <div className="flex flex-wrap items-center gap-4 text-subtle text-sm mt-6 pb-6 border-b border-border font-sans">
             <span className="text-charcoal font-medium">{article.author}</span>
             <span>·</span>
@@ -68,10 +68,7 @@ export default async function ArticlePage({
 
       <article className="max-w-3xl mx-auto px-6 pb-16">
         <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }} />
-        <PullQuote
-          quote="Die Zukunft gehört nicht denen, die sie vorhersagen, sondern denen, die sie gestalten."
-          attribution={article.author}
-        />
+        {article.quote && <PullQuote quote={article.quote} attribution={article.author} />}
         <ArticleActions articleSlug={article.slug} articleTitle={article.title} />
         <ArticleInteractions articleSlug={article.slug} />
       </article>
