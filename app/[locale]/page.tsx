@@ -25,9 +25,11 @@ export default async function HomePage({
     <div className="bg-white">
 
       {/* ── COVER SLIDER ─────────────────────────────────────────────── */}
-      <div className="pt-[10px]">
-        <CoverSlider articles={sliderArticles} />
-      </div>
+      {sliderArticles.length > 0 && (
+        <div className="pt-[10px]">
+          <CoverSlider articles={sliderArticles} />
+        </div>
+      )}
 
       {/* ── MAIN EDITORIAL GRID ─────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-6 pb-8">
