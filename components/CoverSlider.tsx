@@ -43,10 +43,7 @@ export default function CoverSlider({ articles }: { articles: Article[] }) {
   const article = articles[current];
 
   return (
-    <section
-      className="relative overflow-hidden border-b-2 border-gray-800"
-      style={{ height: "58vh", minHeight: "380px" }}
-    >
+    <section className="relative overflow-hidden border-b-2 border-gray-800 aspect-[3/2] md:aspect-auto md:h-[58vh] md:min-h-[380px]">
       {/* Bilder gestapelt, Fade */}
       {articles.map((a, idx) => (
         <div
