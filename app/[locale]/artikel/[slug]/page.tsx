@@ -46,7 +46,7 @@ export default async function ArticlePage({
     <>
       <ArticleTranslationSetter translations={article.translations} />
       <div className="max-w-7xl mx-auto">
-      <article className="max-w-3xl mx-auto rtl:mr-0 px-6 pt-12 md:pt-16">
+      <article className="max-w-3xl rtl:max-w-5xl mx-auto rtl:mr-0 px-6 pt-12 md:pt-16">
         <div className="mb-8">
           <Link href={`/kategorie/${article.categorySlug}`} className="text-gold text-xs font-sans uppercase tracking-widest hover:text-gold-light transition-colors">
             {t(`categories.${article.categorySlug}`)}
@@ -69,7 +69,7 @@ export default async function ArticlePage({
       </div>
 
       <div className="max-w-7xl mx-auto">
-      <article className="max-w-3xl mx-auto rtl:mr-0 px-6 pb-16">
+      <article className="max-w-3xl rtl:max-w-5xl mx-auto rtl:mr-0 px-6 pb-16">
         <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }} />
         {article.quote && <PullQuote quote={article.quote} attribution={article.author} />}
         <ArticleActions articleSlug={article.slug} articleTitle={article.title} />
