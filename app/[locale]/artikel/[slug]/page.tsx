@@ -45,7 +45,8 @@ export default async function ArticlePage({
   return (
     <>
       <ArticleTranslationSetter translations={article.translations} />
-      <article className="max-w-3xl mx-auto px-6 pt-12 md:pt-16">
+      <div className="max-w-7xl mx-auto">
+      <article className="max-w-3xl mx-auto rtl:mr-0 px-6 pt-12 md:pt-16">
         <div className="mb-8">
           <Link href={`/kategorie/${article.categorySlug}`} className="text-gold text-xs font-sans uppercase tracking-widest hover:text-gold-light transition-colors">
             {t(`categories.${article.categorySlug}`)}
@@ -61,17 +62,20 @@ export default async function ArticlePage({
           </div>
         </div>
       </article>
+      </div>
 
       <div className="relative w-full bg-cream mb-10" style={{ height: "55vh", minHeight: "320px" }}>
         <Image src={article.image} alt={article.title} fill priority className="object-cover" sizes="100vw" />
       </div>
 
-      <article className="max-w-3xl mx-auto px-6 pb-16">
+      <div className="max-w-7xl mx-auto">
+      <article className="max-w-3xl mx-auto rtl:mr-0 px-6 pb-16">
         <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }} />
         {article.quote && <PullQuote quote={article.quote} attribution={article.author} />}
         <ArticleActions articleSlug={article.slug} articleTitle={article.title} />
         <ArticleInteractions articleSlug={article.slug} />
       </article>
+      </div>
 
       {related.length > 0 && (
         <section className="bg-cream py-16 px-6">
