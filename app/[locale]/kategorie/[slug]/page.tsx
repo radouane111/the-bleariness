@@ -55,7 +55,7 @@ export default async function CategoryPage({
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-charcoal">
             {t(`categories.${category.slug}`)}
           </h1>
-          <p className="text-muted mt-3 font-sans text-lg max-w-xl">{category.description}</p>
+          {locale !== "ar" && <p className="text-muted mt-3 font-sans text-lg max-w-xl">{category.description}</p>}
           <div className="mt-4 text-subtle text-sm font-sans">
             {categoryArticles.length} {t("category.articles")}
           </div>
